@@ -28,13 +28,9 @@ const _ = {
     const paddedString = ' '.repeat(startPaddingLength) + string + ' '.repeat(endPaddingLength);
   return paddedString;
   },
-  as(object, key){
+  has(object, key){
     const hasValue = object[key];
-    if(hasValue !== undefined){
-      return true;
-    } else {
-      return false;
-    }
+    return (hasValue !== undefined ? true : false);
   }
 };
 
