@@ -32,7 +32,7 @@ const _ = {
     const hasValue = object[key];
     return (hasValue !== undefined ? true : false);
   },
-  invert (object) {
+  invert(object) {
     let invertedObject = {};
     let originalValue;
     for (let key in object) {
@@ -40,7 +40,20 @@ const _ = {
       invertedObject[originalValue] = key;
     }
     return invertedObject;
+  },
+  findKey(object, predicate){
+    let value;
+    let predicateReturnValue;
+    for (let key in object){
+      value = object[key];
+      predicateReturnValue = predicate(value);
+      if(predicateReturnValue) {
+        return key;
+      }
+    }
+    return undefined;
   }
 };
 
+// Do not write or modify code below this line.
 module.exports = _;
