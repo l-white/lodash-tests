@@ -52,6 +52,19 @@ const _ = {
       }
     }
     return undefined;
+  },
+  drop(array, number){
+    let newArray = [];
+    if(number === 0){
+      return array;
+    } 
+    for(i = 0; i < array.length; i++){
+      if(number === undefined || number === 1){
+        newArray = array.shift();
+      }
+      newArray = array.slice(number);
+    }
+    return newArray;
   }
 };
 
